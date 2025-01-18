@@ -16,33 +16,33 @@ This is the source code of the GA-TEB (the fourth version of the GraphicTEB seri
 ## 1. Installation
 The project has been tested on Ubuntu 18.04 (ROS Melodic). To install the repository, please install some dependence firstly: 
 ```
-$ sudo apt install ros-melodic-navigation
-$ sudo apt install ros-melodic-teb-local-planner
+sudo apt install ros-melodic-navigation
+sudo apt install ros-melodic-teb-local-planner
 ```
 Then install OpenCV according the [Chinese reference](https://blog.csdn.net/KIK9973/article/details/118830187) or [English reference](https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html)
 
 Then please install this project and build it: 
 ```
-$ mkdir -p GATEB_ws/src
-$ cd GATEB_ws/src
-$ git clone https://github.com/Chris-Arvin/GraphicTEB-series.git
-$ cd ..
-$ rosdep install –from-paths src –ignore-src –rosdistro-melodic -y
-$ [set the OpenCV_DIR in src/teb_local_planner/CMakeLists.txt according to the real location of your OpenCV]
-$ catkin_make
+mkdir -p GATEB_ws/src
+cd GATEB_ws/src
+git clone https://github.com/Chris-Arvin/GraphicTEB-series.git
+cd ..
+rosdep install –from-paths src –ignore-src –rosdistro-melodic -y
+[set the OpenCV_DIR in src/teb_local_planner/CMakeLists.txt according to the real location of your OpenCV]
+catkin_make
 ```
 
 
 ## 2. Quick Start
 See the performance of GA-TEB in preset scenes with numerous obstacles: 
 ```
-$ source GATEB_ws/devel/setup.bash
-$ roslaunch move_base demo1_navigation.launch
+source GATEB_ws/devel/setup.bash
+roslaunch move_base demo1_navigation.launch
 ```
 Or try another demo with multiple pedestrians: 
 ```
-$ source GATEB_ws/devel/setup.bash
-$ roslaunch move_base demo2_navigation.launch
+source GATEB_ws/devel/setup.bash
+roslaunch move_base demo2_navigation.launch
 ```
 
 
