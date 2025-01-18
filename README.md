@@ -27,7 +27,7 @@ mkdir -p GATEB_ws/src
 cd GATEB_ws/src
 git clone https://github.com/Chris-Arvin/GraphicTEB-series.git
 cd ..
-rosdep install –from-paths src –ignore-src –rosdistro-melodic -y
+rosdep install --from-paths src --ignore-src --rosdistro melodic -y
 [set the OpenCV_DIR in src/teb_local_planner/CMakeLists.txt according to the real location of your OpenCV]
 catkin_make
 ```
