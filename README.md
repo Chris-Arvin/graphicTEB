@@ -1,4 +1,4 @@
-# GA-TEB
+# GA-TEB [ICRA2025]
 This is the source code of the GA-TEB (the fourth version of the GraphicTEB series) [**GA-TEB: Goal-Adaptive Framework for Efficient Navigation Based on Goal Lines**](https://arxiv.org/abs/2409.10009), an approach for robot motion planning.
 [![](https://github.com/user-attachments/assets/5943bc15-ec92-4a07-8aaa-a8c866e9eb6e)](https://www.youtube.com/watch?v=1K7Klxig8CU)
 
