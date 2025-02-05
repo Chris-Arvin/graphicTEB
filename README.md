@@ -15,14 +15,14 @@ This is the source code of the GA-TEB (the fourth version of the GraphicTEB seri
 ## 1 Installation
 
 ### 1.1 Installation on your own ROS Melodic (option 1)
-The project has been tested on Ubuntu 18.04 (ROS Melodic). To install the repository, please install some dependence firstly: 
+##### The project has been tested on Ubuntu 18.04 (ROS Melodic). To install the repository, please install some dependence firstly: 
 ```
 sudo apt install ros-melodic-navigation
 sudo apt install ros-melodic-teb-local-planner
 ```
-Then install OpenCV according the [Chinese reference](https://blog.csdn.net/KIK9973/article/details/118830187) or [English reference](https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html)
+##### Then install OpenCV according the [Chinese reference](https://blog.csdn.net/KIK9973/article/details/118830187) or [English reference](https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html)
 
-Then please install this project and build it: 
+##### Then please install this project and build it: 
 ```
 mkdir -p GATEB_ws/src
 cd GATEB_ws/src
@@ -34,6 +34,58 @@ catkin_make
 ```
 
 ### 1.2 Installation with docker (option 2)
+Since it's quite complicated to install OpenCV, we also provide an alternative to run this code using Docker where OpenCV has already been pre-installed.
+##### Download the Docker (https://docs.docker.com/engine/install):
+```bash
+for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt-get update
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+##### download the docker images (click [here](https://aws.amazon.com/docker) to understand docker):
+```bash
+docker push arvinzqy/ubuntu_melodic:latest
+```
+
+##### enable the display:
+```bash
+sudo apt-get install x11-xserver-utils
+xhost +
+```
+Note that everytime you restart your computer you will probably need to run the xhost + command above.
+
+##### create the docker container:
+```bash
+sudo docker run --gpus all -it -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -e XAUTHORITY=/tmp/.docker.xauth -v /tmp/.X11-unix:/tmp/.X11-unix -v /home/arvin/Desktop/pedsim_ws:/usr/app/pedsim_ws --network host --name ubuntu1804 arvinzqy/ubuntu_melodic:latest /bin/bash
+```
+
+##### exit the docker and start your docker environment
+```bash
+sudo docker start ubuntu1804
+sudo docker exec -it ubuntu1804 /bin/bash
+```
+
+##### then please install this project and build it: 
+```
+mkdir -p GATEB_ws/src
+cd GATEB_ws/src
+git clone https://github.com/Chris-Arvin/GraphicTEB-series.git
+cd ..
+rosdep install --from-paths src --ignore-src --rosdistro melodic -y
+[set the OpenCV_DIR in src/teb_local_planner/CMakeLists.txt according to the real location of your OpenCV]
+catkin_make
+```
 
 
 ## 2. Quick Start
