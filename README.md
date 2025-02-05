@@ -5,7 +5,8 @@ This is the source code of the GA-TEB (the fourth version of the GraphicTEB seri
 
 
 ## Table of Contents
-* [Installation](#1-Installation)
+* [Installation1](#1-1-Installation-on-your-own-Ubuntu-18-04)
+* [Installation2](#1-2-Installation-with-docker)
 * [Quick Start](#2-Quick-Start)
 * [Introduction for Parameters](#3-Introduction-for-Key-Parameters)
 * [Contributors](#4-Contributors)
@@ -13,7 +14,7 @@ This is the source code of the GA-TEB (the fourth version of the GraphicTEB seri
 * [Acknowledgement](#6-Acknowledge)
 
 
-## 1. Installation
+## 1.1 Installation on your own Ubuntu 18.04
 The project has been tested on Ubuntu 18.04 (ROS Melodic). To install the repository, please install some dependence firstly: 
 ```
 sudo apt install ros-melodic-navigation
@@ -32,6 +33,8 @@ rosdep install --from-paths src --ignore-src --rosdistro melodic -y
 catkin_make
 ```
 
+## 1.2 Installtion with docker
+
 
 ## 2. Quick Start
 See the performance of GA-TEB in preset scenes with numerous obstacles: 
@@ -44,6 +47,7 @@ Or try another demo with multiple pedestrians:
 source GATEB_ws/devel/setup.bash
 roslaunch move_base demo2_navigation.launch
 ```
+Then, select a Nav_goal in rviz and see the performance of the robot~!
 
 
 ## 3. Introduction for Key Parameters
