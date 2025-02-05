@@ -5,8 +5,8 @@ This is the source code of the GA-TEB (the fourth version of the GraphicTEB seri
 
 
 ## Table of Contents
-* [Installation1](#1-Installation-on-your-own-ROS-Melodic-(option-1))
-* [Installation2](#1-Installation-with-docker-(option-2))
+* [Installation option 1](#11-Installation-on-your-own-ROS-Melodic-option-1)
+* [Installation option 2](#12-Installation-with-docker-option-2)
 * [Quick Start](#2-Quick-Start)
 * [Introduction for Parameters](#3-Introduction-for-Key-Parameters)
 * [Contributors](#4-Contributors)
@@ -14,7 +14,7 @@ This is the source code of the GA-TEB (the fourth version of the GraphicTEB seri
 * [Acknowledgement](#6-Acknowledge)
 
 
-## 1. Installation on your own ROS Melodic (option 1)
+## 1.1 Installation on your own ROS Melodic (option 1)
 The project has been tested on Ubuntu 18.04 (ROS Melodic). To install the repository, please install some dependence firstly: 
 ```
 sudo apt install ros-melodic-navigation
@@ -33,7 +33,7 @@ rosdep install --from-paths src --ignore-src --rosdistro melodic -y
 catkin_make
 ```
 
-## 1. Installation with docker (option 2)
+## 1.2 Installation with docker (option 2)
 
 
 ## 2. Quick Start
