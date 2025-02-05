@@ -53,30 +53,30 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
-##### download the docker images (click [here](https://aws.amazon.com/docker) to understand docker):
+##### Download the docker images (click [here](https://aws.amazon.com/docker) to understand docker):
 ```bash
 docker push arvinzqy/ubuntu_melodic:latest
 ```
 
-##### enable the display:
+##### Enable the display:
 ```bash
 sudo apt-get install x11-xserver-utils
 xhost +
 ```
 Note that everytime you restart your computer you will probably need to run the xhost + command above.
 
-##### create the docker container:
+##### Create the docker container:
 ```bash
 sudo docker run --gpus all -it -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -e XAUTHORITY=/tmp/.docker.xauth -v /tmp/.X11-unix:/tmp/.X11-unix -v /home/arvin/Desktop/pedsim_ws:/usr/app/pedsim_ws --network host --name ubuntu1804 arvinzqy/ubuntu_melodic:latest /bin/bash
 ```
 
-##### exit the docker and start your docker environment
+##### Exit the docker and start your docker environment
 ```bash
 sudo docker start ubuntu1804
 sudo docker exec -it ubuntu1804 /bin/bash
 ```
 
-##### then please install this project and build it: 
+##### Then please install this project and build it: 
 ```
 mkdir -p GATEB_ws/src
 cd GATEB_ws/src
