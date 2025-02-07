@@ -20,7 +20,7 @@ This is the source code of the GA-TEB (the fourth version of the GraphicTEB seri
 sudo apt install ros-melodic-navigation
 sudo apt install ros-melodic-teb-local-planner
 ```
-##### Then install OpenCV according the [Chinese reference](https://blog.csdn.net/KIK9973/article/details/118830187) or [English reference](https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html)
+##### Then install OpenCV according the [Chinese reference](https://blog.csdn.net/KIK9973/article/details/118830187) or [English reference1](https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html), [English reference2](https://medium.com/@redswitches/how-to-install-opencv-on-ubuntu-22-04-fe736d51c705).
 
 ##### Then please install this project and build it: 
 ```
